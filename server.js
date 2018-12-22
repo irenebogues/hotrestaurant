@@ -1,4 +1,3 @@
-
 // variables for required packages
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -13,15 +12,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-app.get("/", function (req, res) {
-	res.sendFile(path.join(__dirname, "index.html"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.get("/make", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+app.get("/home", function(req, res) {
+  res.sendFile(path.join(__dirname, "make.html"));
+});
+app.get("/table", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/reserve.html", function (req, res) {
-	res.sendFile(path.join(__dirname, "TablesPage.html"));
-});
+app.post("/make", function(req, res) {
+  let newTable = res.body;
+  tables.push(newTable);
 
-app.get("/tables.html", function (req, res) {
-	res.sendFile(path.join(__dirname, "make.html"));
+  res.json(newTable);
 });
-
