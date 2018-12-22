@@ -1,4 +1,3 @@
-
 // Dependencies
 // =============================================================
 var express = require("express");
@@ -16,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 // app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-
 app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
@@ -33,9 +31,8 @@ app.get("/table", function(req, res) {
 app.post("/reserve", function(req, res) {
   let newTable = res.body;
   tables.push(newTable);
-
   res.json(newTable);
-
+  console.log(newTable);
 });
 
 app.listen(PORT, function() {

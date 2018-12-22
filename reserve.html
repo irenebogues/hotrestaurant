@@ -112,7 +112,7 @@
     event.preventDefault();
 
     $.post(
-      "/make",
+      "/reserve",
       new Table(
         $("#reserve-unique-id").val(),
         $("#reserve-name").val(),
@@ -120,7 +120,7 @@
         $("#reserve-phone").val()
       )
     ).then(function(data) {
-      console.log("make.html", data);
+      console.log("reserve.html", data);
       alert("Adding reservation...");
     });
   });
