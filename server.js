@@ -17,17 +17,20 @@ app.use(bodyParser.text());
 // app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
-app.get("/make", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+app.get("/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 app.get("/home", function(req, res) {
-  res.sendFile(path.join(__dirname, "reserve.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 app.get("/table", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.post("/make", function(req, res) {
+app.post("/reserve", function(req, res) {
   let newTable = res.body;
   tables.push(newTable);
 
