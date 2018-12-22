@@ -28,7 +28,12 @@ app.get("/tables", function(req, res) {
   // res.json(reservations);
 });
 app.get("/api/tables", (req,res)=>{
-  res.json(reservations);
+  res.json(reservations.slice(0,5));
+});
+app.get("/api/waitlist", (req,res)=>{
+  if(reservations.length>5){
+    res.json(reservations.slice(5));
+  }
 });
 
 app.post("/reserve", function(req, res) {
