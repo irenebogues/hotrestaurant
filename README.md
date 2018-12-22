@@ -1,5 +1,5 @@
 # Hot Restaurant
-first group full-stact group exercise
+First group exercise using Full-Stack Web Development
 # Goal
 To create a basic Express Server
 
