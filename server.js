@@ -8,25 +8,14 @@ var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 30000;
+var PORT = process.env.PORT || 3000;
 var reservations = [];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+// app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-
-// Routes
-// =============================================================
-
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
 app.get("/make", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
@@ -44,4 +33,8 @@ app.post("/make", function(req, res) {
 
   res.json(newTable);
 
+});
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
 });
