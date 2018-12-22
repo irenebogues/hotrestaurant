@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-// variables for required packages
-=======
 
 // Dependencies
 // =============================================================
->>>>>>> 857a179f7071a1045c83f5cc6934a546838738b0
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -36,7 +32,7 @@ app.get("/make", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 app.get("/home", function(req, res) {
-  res.sendFile(path.join(__dirname, "make.html"));
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 app.get("/table", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
