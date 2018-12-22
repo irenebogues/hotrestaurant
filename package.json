@@ -1,0 +1,22 @@
+{
+  "name": "hotrestaurant",
+  "version": "1.0.0",
+  "description": "first full-stack group practice ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenebogues/hotrestaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irenebogues/hotrestaurant/issues"
+  },
+  "homepage": "https://github.com/irenebogues/hotrestaurant#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
