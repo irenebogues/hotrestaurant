@@ -99,29 +99,30 @@
 </html>
 
 <script type="text/javascript">
-  class Table {
-    constructor(id, name, email, phone) {
-      this.id = id;
-      this.name = name;
-      this.email = email;
-      this.phone = phone;
-    }
-  }
-
   $(".submit").on("click", event => {
-    event.preventDefault();
+    class Table {
+      constructor(id, name, email, phone) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+      }
+    }
 
-    $.post(
-      "/reserve",
-      new Table(
-        $("#reserve-unique-id").val(),
-        $("#reserve-name").val(),
-        $("#reserve-email").val(),
-        $("#reserve-phone").val()
-      )
-    ).then(function(data) {
-      console.log("reserve.html", data);
-      alert("Adding reservation...");
+    let newTable = new Table(
+      $("#reserve-unique-id").val(),
+      $("#reserve-name").val(),
+      $("#reserve-email").val(),
+      $("#reserve-phone").val()
+    );
+    console.log("NEW TABLE: " + newTable);
+    $("#reserve-unique-id").val("");
+    $("#reserve-name").val("");
+    $("#reserve-email").val("");
+    $("#reserve-phone").val("");
+    event.preventDefault();
+    $.post("/reserve", newTable).then(data => {
+      // console.log("reserve.html", data);
     });
   });
 </script>

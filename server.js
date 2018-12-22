@@ -13,7 +13,6 @@ var reservations = [];
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-// app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
@@ -26,12 +25,17 @@ app.get("/", function(req, res) {
 });
 app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
+  // res.json(reservations);
+});
+app.get("/api/tables", (req,res)=>{
   res.json(reservations);
-
 });
 
 app.post("/reserve", function(req, res) {
-  let newTable = res.body;
+  // console.log(res);
+
+  console.log(req.body);
+  let newTable = req.body;
   reservations.push(newTable);
   console.log(newTable);
 });
