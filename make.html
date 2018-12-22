@@ -97,3 +97,31 @@
     </body>
   </body>
 </html>
+
+<script type="text/javascript">
+  class Table {
+    constructor(id, name, email, phone) {
+      this.id = id;
+      this.name = name;
+      this.email = email;
+      this.phone = phone;
+    }
+  }
+
+  $(".submit").on("click", event => {
+    event.preventDefault();
+
+    $.post(
+      "/make",
+      new Table(
+        $("#reserve-unique-id").val(),
+        $("#reserve-name").val(),
+        $("#reserve-email").val(),
+        $("#reserve-phone").val()
+      )
+    ).then(function(data) {
+      console.log("make.html", data);
+      alert("Adding reservation...");
+    });
+  });
+</script>
