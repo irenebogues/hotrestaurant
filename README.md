@@ -4,7 +4,7 @@ first group full-stact group exercise
 To create a basic Express Server
 
 ## Authors
-**Monica Shiwratan**
-**Patrick Gerspach**
-**Jonathan Garcia**
-**Irene Bogues**
+**Monica Shiwratan** -- Author
+**Patrick Gerspach** -- Author
+**Jonathan Garcia** -- Author
+**Irene Bogues** -- Author
