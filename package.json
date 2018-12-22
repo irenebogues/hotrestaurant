@@ -1,8 +1,19 @@
 {
   "name": "hotrestaurant",
   "version": "1.0.0",
-  "description": "first full-stack group practice ",
+  "description": "first full-stack group practice",
   "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC"  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,4 +30,5 @@
   "dependencies": {
     "express": "^4.16.4"
   }
+
 }
