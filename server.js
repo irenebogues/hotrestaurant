@@ -26,12 +26,13 @@ app.get("/", function(req, res) {
 });
 app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
+  res.json(reservations);
+
 });
 
 app.post("/reserve", function(req, res) {
   let newTable = res.body;
   reservations.push(newTable);
-  res.json(newTable);
   console.log(newTable);
 });
 
